@@ -9,6 +9,11 @@ cd tic_tac_toe
 bundle install
 ```
 
+### Play Game
+```
+ruby app/main.rby
+```
+
 ### Test
 For test, rspec has been used. Please execute following command to get test report.
 ```
