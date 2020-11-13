@@ -11,6 +11,10 @@ bundle install
 
 ### Play Game
 ```
+# With Executable
+./start
+
+# Wih Ruby code
 ruby app/main.rby
 ```
 
