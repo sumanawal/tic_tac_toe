@@ -12,11 +12,11 @@ board = Board.new
 board.show
 # Set name and symbol for players
 player1 = Player.new
-player1.fetch_name
-player1.fetch_symbol('X')
 player2 = Player.new
+player1.fetch_name
+player1.fetch_symbol('X', player2.game_symbol)
 player2.fetch_name
-player2.fetch_symbol('O')
+player2.fetch_symbol('O', player1.game_symbol)
 
 # Start Play and get input from user
 game = Game.new(player1, player2, board)
