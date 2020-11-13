@@ -16,7 +16,7 @@ describe Player do
 
   describe '#fetch_symbol' do
     let(:default_symbol) { 'X' }
-    let(:user_symbol) { 'Sym' }
+    let(:user_symbol) { 'Sym'.upcase }
     subject(:fetch_symbol) { player.fetch_symbol(default_symbol) }
 
     it 'takes string input as a symbol for player' do

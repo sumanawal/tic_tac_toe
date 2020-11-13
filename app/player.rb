@@ -9,9 +9,13 @@ class Player
     @name = STDIN.gets.chomp
   end
 
-  def fetch_symbol(default)
+  def fetch_symbol(default, another_player_symbol = nil)
     puts "Please choose the prefered symbol. default will be #{default}:"
-    input_symbol = STDIN.gets.chomp
+    input_symbol = STDIN.gets.chomp.upcase
     @game_symbol = input_symbol.empty? ? default : input_symbol
+    while @game_symbol == another_player_symbol || @game_symbol.empty?
+      puts "Symbol '#{@game_symbol}' is either invalid or has been selected by another user. \nPlease enter another symbol"
+      @game_symbol = STDIN.gets.chomp.upcase
+    end
   end
 end
