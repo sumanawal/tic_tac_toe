@@ -2,7 +2,7 @@
 
 # Get player name input
 class Player
-  attr_reader :name, :game_symbol
+  attr_accessor :name, :game_symbol
 
   def fetch_name
     puts 'Please enter name of player:'
@@ -17,5 +17,10 @@ class Player
       puts "Symbol '#{@game_symbol}' is either invalid or has been selected by another user. \nPlease enter another symbol"
       @game_symbol = STDIN.gets.chomp.upcase
     end
+  end
+
+  def fetch_input(board_values)
+    puts 'Enter the the number between 1-9 which has not been filled up'
+    STDIN.gets.chomp.to_i
   end
 end

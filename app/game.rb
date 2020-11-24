@@ -13,10 +13,10 @@ class Game
     until game_completed
       player = PlayerTurn.new(@player1, @player2, @board.values).call
       puts player.name
-      column_number = player_input
+      column_number = player.fetch_input(@board.values)
       until valid?(column_number)
         puts 'You enter invalid data.'
-        column_number = player_input
+        column_number = player.fetch_input(@board.values)
       end
       @board.values[column_number - 1] = player.game_symbol
       @board.show
@@ -26,10 +26,7 @@ class Game
 
   private
 
-  def player_input
-    puts 'Enter the the number between 1-9 which has not been filled up'
-    STDIN.gets.chomp.to_i
-  end
+
 
   def valid?(column_number)
     column_number.is_a?(Integer) && column_number.between?(1, 9) && @board.values[column_number - 1].empty?
